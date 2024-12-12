@@ -13,6 +13,11 @@ const textSizeIncrement = 1;
 
 function updateElement() {
   movable.style.transform = `translate(${posX}px, ${posY}px)`;
+  // add in more updates for the cube here:
+  // update height and width for updating size
+  // update rotate for rotating the cube
+  movable.className = movable.className.replace(/text-\[\d+px\]/, ""); // needed for tailwind to work with the script
+  movable.classList.add(`text-[${currentTextSize}px]`); // needed for tailwind to work with the script
 }
 
 document.addEventListener("keydown", (event) => {
